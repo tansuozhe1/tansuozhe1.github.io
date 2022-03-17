@@ -1,0 +1,138 @@
+@base:46.875rem;
+.bg(@url){
+    background-image: url("../images/@{url}");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.size(@width,@height){
+    width:(@width/@base);
+    height:(@height/@base);
+}
+
+.w(@width){
+    width:(@width/@base);
+}
+
+.h(@height){
+    height:(@height/@base);
+}
+
+.fs(@fontSIze){
+    font-size: (@fontSIze/@base);
+}
+
+[v-cloak]{
+    display: none !important;
+}
+
+#root {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.navbar{
+    .h(83);
+    .bg("dwxz_topBg.png");
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    .fs(32);
+    color: #1e62a9;
+
+    div{
+        .h(83);
+        line-height: (83/@base);
+
+        &.active{
+            color:#001b64;
+            font-weight: bold;
+
+        }
+    }
+
+}
+
+.topInfo{
+    .h(80);
+    background-color: #eee;
+    .fs(32);
+    font-weight: bold;
+    color:#333131;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: (10/@base);
+
+    span{
+        font-weight: bold;
+        color:#333131;
+
+    }
+}
+
+.unitType{
+    // border:1px solid red;
+    padding: (40/@base) (30/@base) (60/@base);
+
+    .title{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: (40/@base);
+
+        .leftImg{
+            // width: 30%;
+            flex: 1;
+            .h(35);
+            .bg("dwxz_dwlxLeft.png");
+            margin-top: (6/@base);
+        }
+
+        .text{
+            // .w(240);
+            text-align: center;
+            .fs(40);
+            color:#0d7fae;
+            font-weight: bold;
+        }
+
+        .rightImg{
+            // width: 30%;
+            flex: 1;
+            .h(35);
+            .bg("dwxz_dwlxRight.png");
+            margin-top: (6/@base);
+        }
+    }
+
+    .units{
+        margin-bottom: (30/@base);
+        color:#333;
+        .fs(32);
+        display: flex;
+        width: 100%;
+        justify-content:start;
+        align-items: center;
+        // .h(44);
+        // line-height: (44/@base);
+
+        .icon{
+            display: inline-block;
+            .size(32,32);
+            .bg("dwxz_dwlxLx.png");
+            margin:(6/@base) (20/@base) 0 0;
+
+            &.active{
+                .bg("dwxz_active_dwlxLx.png");
+            }
+        }
+
+        .text{
+            flex: 1;
+            // border:1px solid red;
+        }
+    }
+}

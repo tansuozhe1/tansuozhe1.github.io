@@ -1,0 +1,100 @@
+[v-cloak] {
+  display: none !important;
+}
+#root {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.navbar {
+  height: 1.77066667rem;
+  background-image: url("../images/dwxz_topBg.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.68266667rem;
+  color: #1e62a9;
+}
+.navbar div {
+  height: 1.77066667rem;
+  line-height: 1.77066667rem;
+}
+.navbar div.active {
+  color: #001b64;
+  font-weight: bold;
+}
+.topInfo {
+  height: 1.70666667rem;
+  background-color: #eee;
+  font-size: 0.68266667rem;
+  font-weight: bold;
+  color: #333131;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 0.21333333rem;
+}
+.topInfo span {
+  font-weight: bold;
+  color: #333131;
+}
+.unitType {
+  padding: 0.85333333rem 0.64rem 1.28rem;
+}
+.unitType .title {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.85333333rem;
+}
+.unitType .title .leftImg {
+  flex: 1;
+  height: 0.74666667rem;
+  background-image: url("../images/dwxz_dwlxLeft.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin-top: 0.128rem;
+}
+.unitType .title .text {
+  text-align: center;
+  font-size: 0.85333333rem;
+  color: #0d7fae;
+  font-weight: bold;
+}
+.unitType .title .rightImg {
+  flex: 1;
+  height: 0.74666667rem;
+  background-image: url("../images/dwxz_dwlxRight.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin-top: 0.128rem;
+}
+.unitType .units {
+  margin-bottom: 0.64rem;
+  color: #333;
+  font-size: 0.68266667rem;
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  align-items: center;
+}
+.unitType .units .icon {
+  display: inline-block;
+  width: 0.68266667rem;
+  height: 0.68266667rem;
+  background-image: url("../images/dwxz_dwlxLx.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin: 0.128rem 0.42666667rem 0 0;
+}
+.unitType .units .icon.active {
+  background-image: url("../images/dwxz_active_dwlxLx.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.unitType .units .text {
+  flex: 1;
+}

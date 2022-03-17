@@ -1,0 +1,106 @@
+@base: 46.875rem;
+
+.bg(@url){
+    background-image:url("../images/@{url}");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.size(@width,@height){
+    width:(@width/@base);
+    height:(@height/@base);
+}
+
+.w(@width){
+    width:(@width/@base);
+}
+
+.h(@height){
+    height:(@height/@base);
+}
+
+.fs(@fontSize){
+    font-size:(@fontSize/@base);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+.wrapper{
+    overflow: hidden;
+    background-color: rgb(206,239,252);
+
+    .topTitle{
+        // width: 580px;
+        // height: 192px;
+        // background-image: url("https://t.shundecity.com/jxpy2021/Home/view/Index/images/home_topTitle.png");
+        // background-size: 100% 100%;
+        // background-repeat: no-repeat;
+        // margin:80px auto;
+        .w(580);
+        .h(192);
+        .bg("home_topTitle.png");
+        margin:(80/@base) auto;
+    }
+
+    .qrCode{
+        // padding-top: 10px;
+        // width: 280px;
+        // height: 310px;
+        // background-color: #fff;
+        // margin:0 auto;
+        // text-align: center;
+
+        padding-top:(10/@base);
+        .w(280);
+        .h(310);
+        background-color: #fff;
+        margin:0 auto;
+        text-align: center;
+
+        .code{
+            display: inline-block;
+            // width: 256px;
+            // height: 256px;
+            // background-image: url("https://t.shundecity.com/jxpy2021/Home/view/Index/images/jxpy2021_qrCode.png");
+            // background-size: 100% 100%;
+            // background-repeat: no-repeat;
+            .size(256,256);
+            .bg("jxpy2021_qrCode.png");
+        }
+
+        p{
+            // font-size: 20px;
+            .fs(21);
+            color: #666;
+        }
+    }
+
+    .lastBox{
+        // margin-top:20px ;
+        text-align: center;
+        margin: (40/@base) 0 (60/@base);
+
+        span{
+            // font-size: 24px;
+            // .fs(40);
+            font-size:0.6rem;
+            color: #625a5a;
+        }
+
+        input{
+            // width: 420px;
+            // height: 32px;
+            // line-height: 32px;
+            // padding-left: 5px;
+            // font-size:15px ;
+
+            .size(710,38);
+            line-height: (38/@base);
+            padding-left: (6/@base);
+            .fs(26);
+        }
+    }
+    
+}

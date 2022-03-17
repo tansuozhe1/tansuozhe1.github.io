@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.wrapper {
+  overflow: hidden;
+  background-color: #ceeffc;
+}
+.wrapper .topTitle {
+  width: 12.37333333rem;
+  height: 4.096rem;
+  background-image: url("../images/home_topTitle.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin: 1.70666667rem auto;
+}
+.wrapper .qrCode {
+  padding-top: 0.21333333rem;
+  width: 5.97333333rem;
+  height: 6.61333333rem;
+  background-color: #fff;
+  margin: 0 auto;
+  text-align: center;
+}
+.wrapper .qrCode .code {
+  display: inline-block;
+  width: 5.46133333rem;
+  height: 5.46133333rem;
+  background-image: url("../images/jxpy2021_qrCode.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.wrapper .qrCode p {
+  font-size: 0.448rem;
+  color: #666;
+}
+.wrapper .lastBox {
+  text-align: center;
+  margin: 0.85333333rem 0 1.28rem;
+}
+.wrapper .lastBox span {
+  font-size: 0.6rem;
+  color: #625a5a;
+}
+.wrapper .lastBox input {
+  width: 15.14666667rem;
+  height: 0.81066667rem;
+  line-height: 0.81066667rem;
+  padding-left: 0.128rem;
+  font-size: 0.55466667rem;
+}

@@ -1,0 +1,146 @@
+[v-cloak] {
+  display: none !important;
+}
+#root {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.home {
+  background-image: url("../images/home_bg.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  height: 100%;
+}
+.home .topTitle {
+  width: 14.528rem;
+  height: 4.8rem;
+  background-image: url("../images/home_topTitle.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin: 0.85333333rem auto 0.42666667rem;
+}
+.home .topText {
+  width: 12.48rem;
+  height: 0.91733333rem;
+  background-image: url("../images/home_topText.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+.home .topUnit {
+  width: 9.19466667rem;
+  height: 0.55466667rem;
+  background-image: url("../images/top_unit.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin: 0.85333333rem auto 6.4rem;
+}
+.home .perface {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home .perface div {
+  width: 4.24533333rem;
+  height: 1.70666667rem;
+}
+.home .perface .qy {
+  background-image: url("../images/home_qy.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin-right: 0.85333333rem;
+}
+.home .perface .xz {
+  background-image: url("../images/home_xz.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin-right: 0.85333333rem;
+}
+.home .perface .zxpy {
+  background-image: url("../images/home_zxpy.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.home .pydx {
+  width: 3.904rem;
+  height: 1.152rem;
+  background-image: url("../images/home_pydx.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin: 1.28rem auto 0.85333333rem;
+}
+.home .unitType {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.85333333rem;
+}
+.home .unitType div {
+  width: 3.328rem;
+  height: 8.04266667rem;
+  margin-right: 0.42666667rem;
+}
+.home .unitType div:last-child {
+  margin-right: 0;
+}
+.home .unitType .qsdw {
+  background-image: url("../images/home_qsdw.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.home .unitType .zjdw {
+  background-image: url("../images/home_zjdw.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.home .unitType .sydw {
+  background-image: url("../images/home_sydw.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.home .unitType .fdjg {
+  background-image: url("../images/home_fdjg.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.qy_xz {
+  background-image: url("../images/qy_bg.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  height: 100%;
+}
+.qy_xz .qy {
+  width: 14.464rem;
+  height: 21.33333333rem;
+  background-image: url("../images/qy_qyBg.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin: 2.13333333rem auto 3.2rem;
+  padding: 2.13333333rem 1.024rem 0;
+  text-indent: 2em;
+  font-size: 0.64rem;
+  line-height: 1.024rem;
+}
+.qy_xz .xz {
+  width: 14.464rem;
+  height: 18.92266667rem;
+  background-image: url("../images/qy_xzBg.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin: 2.13333333rem auto 3.2rem;
+  padding: 2.56rem 1.024rem 0;
+  text-indent: 2em;
+  font-size: 0.64rem;
+  line-height: 1.19466667rem;
+}
+.qy_xz .backBtn {
+  width: 4.11733333rem;
+  height: 2.176rem;
+  background-image: url("../images/qy_back.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin: 0 auto 1.70666667rem;
+}

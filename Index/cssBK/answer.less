@@ -1,0 +1,198 @@
+@base:46.875rem;
+.bg(@url){
+    background-image: url("../images/@{url}");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.size(@width,@height){
+    width:(@width/@base);
+    height:(@height/@base);
+}
+
+.w(@width){
+    width:(@width/@base);
+}
+
+.h(@height){
+    height:(@height/@base);
+}
+
+.fs(@fontSIze){
+    font-size: (@fontSIze/@base);
+}
+
+[v-cloak]{
+    display: none !important;
+}
+
+#root {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+
+.navbar{
+    .h(83);
+    .bg("dwxz_topBg.png");
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    .fs(32);
+    color: #1e62a9;
+
+    div{
+        .h(83);
+        line-height: (83/@base);
+
+        &.active{
+            color:#001b64;
+            font-weight: bold;
+
+        }
+    }
+
+}
+
+.topInfo{
+    // .h(80);
+    background-color: #eee;
+    .fs(32);
+    font-weight: bold;
+    color:#333131;
+    text-align: center;
+    // box-sizing: border-box;
+    // padding-top: (10/@base);
+    padding:(20/@base) (40/@base);
+}
+
+// 题目盒子
+.question_answer{
+    padding: (40/@base);
+    background-color: #fff;
+    // border:1px solid red;
+
+    .questionBox{
+        .fs(32);
+        color:#585858;
+        margin-bottom: (40/@base);
+        text-align: left;
+
+
+        // span{
+        //     color:
+        // }
+    }
+
+    .answerBox{
+        width: 100%;
+        // display: flex;
+        // flex-wrap: wrap;
+        // justify-content: space-between;
+        // align-items: center;
+
+        .wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+
+            .answerItem{
+                width: 50%;
+                display: flex;
+                justify-content: start;
+                align-items: flex-start;
+                padding-left: (60/@base);
+                // border:1px solid red;
+                .fs(32);
+                color:#585858;
+                margin-bottom: (20/@base);
+                .icon{
+                    display: inline-block;
+                    .size(32,32);
+                    .bg("dt_lx.png");
+                    margin:(8/@base) (20/@base) 0 0;
+    
+                    &.active{
+                        .bg("dt_activeLx.png");
+                    }
+                }
+    
+                .text{
+                    flex: 1;
+                }
+            }
+
+        }
+
+    }
+
+    // 不满意多选的选项盒子
+    .answerBox_anti{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        .answerItem_anti{
+            width: 100%;
+            // border: 1px solid red;
+            .fs(32);
+            color:#585858;
+            display: flex;
+            justify-content: start;
+            align-items: flex-start;
+            margin-bottom: (30/@base);
+
+            .icon{
+                display: inline-block;
+                .size(32,32);
+                .bg("dt_lx.png");
+                margin:(6/@base) (20/@base) 0 0;
+
+                &.active{
+                    .bg("dt_activeLx.png");
+                }
+            }
+
+            .text{
+                flex: 1;
+            }
+        }
+
+        #anotherInfo{
+            width: 100%;
+            .h(200);
+            border: 1px solid #bbb;
+            border-radius: (10/@base);
+            resize: none;
+            padding:(10/@base) (20/@base);
+            .fs(32);
+        }
+    }
+}
+
+.submitBox{
+    .size(250,72);
+    background-color:#0d7fae;
+    .fs(40);
+    color: #fff;
+    // padding:(10/@base) 0;
+    line-height: (72/@base);
+    text-align: center;
+    border-radius: (20/@base);
+    margin:(40/@base) auto;
+}
+
+#lastSuggest{
+    width: 100%;
+    .h(200);
+    border: 1px solid #bbb;
+    border-radius: (10/@base);
+    resize: none;
+    padding:(10/@base) (20/@base);
+    .fs(32);
+}
