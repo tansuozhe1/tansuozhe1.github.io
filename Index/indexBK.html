@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="顺德,政府绩效管理,网络评议,区属单位,镇街,事业单位,法定机构">
+    <meta name="description" content="诚邀您对顺德政府各单位2021年的工作进行评议，评议时间截至2021年12月31日。">
+    <title>2021年顺德区政府绩效公众网络评议_顺德城市网</title>
+
+    <link rel="stylesheet" href="__PUBLIC__/Index/css/init.css">
+    <link rel="stylesheet" href="__PUBLIC__/Index/css/vant.css">
+    <link rel="stylesheet" href="__PUBLIC__/Index/css/index.css?v=1.03">
+    <link rel="stylesheet" href="__PUBLIC__/Index/css/animate.min.css">
+
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 移动端开发，根据设计稿修改参数
+                    if (clientWidth > 750) {
+                        docEl.style.fontSize = 40 + 'px';
+                    } else {
+                        docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                    }
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+
+<body>
+    <div id="app" style="display: none;" v-show="appStatus" v-cloak>
+        <div id="root" style="margin: 0 auto;" :style="{width:clientW+'px',minHeight:clientH+'px'}">
+            <input type="hidden" id="zhiye" value="{$zhiye}">
+            <!-- <input type="hidden" value="{$token}">
+            <input type="hidden" value="{$baseuid}"> -->
+            <div class="home" v-show="showHome" style="display: none;" :style="{minHeight:clientH+'px'}">
+                <div class="topTitle animate__animated animate__zoomInDown"></div>
+                <div class="topText animate__animated animate__zoomInLeft"></div>
+                <div class="topUnit animate__animated animate__zoomInRight"></div>
+
+                <div class="perface animate__animated animate__zoomIn">
+                    <div class="qy" @click="showHome = false,showQy = true,showXz = false"></div>
+                    <div class="xz" @click="showHome = false,showXz = true,showQy = false"></div>
+                    <div class="zxpy" @click="toQsdw(1)"></div>
+                </div>
+
+                <div class="pydx"></div>
+
+                <div class="unitType animate__animated animate__bounceIn">
+                    <div class="qsdw" @click="toSelectUnit(1)"></div>
+                    <div class="zjdw" @click="toSelectUnit(2)"></div>
+                    <div class="sydw" @click="toSelectUnit(3)"></div>
+                    <div class="fdjg" @click="toSelectUnit(4)"></div>
+                </div>
+            </div>
+
+            <div class="qy_xz" v-show="!showHome" :style="{minHeight:clientH+'px'}">
+                <div class="qy" v-show="showQy">
+                    <p style="margin-bottom: 10px;">
+                        当前，顺德战略已定，将坚持工业立区、科技强区战略，全面推动治水大会战、城市大建设、品质大提升，以水兴城、以城聚才、产城融合，全面提升顺德在大湾区的竞争力、影响力和辐射力，奋力建设高质量发展先行示范区。2021年，顺德高质量发展也取得了新进步、新成效，全区各条战线都贡献了各自的力量。
+                    </p>
+                    <p style="margin-bottom: 10px;">
+                        那么，您对顺德政府各单位的表现评价如何？12月1日起至12月31日，顺德区绩效办联合顺德城市网分批对区属单位、镇街单位、事业单位、法定机构等进行政府绩效公众网络评议。</p>
+                    <p>我们诚挚邀请您对各单位2021年的工作进行评议，您的意见和建议也将作为各单位改进工作的重要参考内容。所有单位的评议时间均截至2021年12月31日。</p>
+                </div>
+                <div class="xz" v-show="showXz">
+                    <p>1、公众网络调查的评价结果将成为全区各单位改进工作的依据，请根据您的真实感受对相应单位作出客观评价。</p>
+                    <p>2、期待您对相关单位的工作提出意见建议，提供更多有价值的参考。</p>
+                    <p>3、每个用户只能对每个单位评议1次。</p>
+                    <p>4、评议时间:</p>
+                    <p>区属单位 2021年12月01日至12月31日</p>
+                    <p>镇街单位 2021年12月10日至12月31日</p>
+                    <p>事业单位 2021年12月20日至12月31日</p>
+                    <p>法定机构 2021年12月27日至12月31日</p>
+                </div>
+                <div class="backBtn" @click="showHome = true"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="__PUBLIC__/Index/js/jquery-3.1.1.min.js"></script>
+    <script src="__PUBLIC__/Index/js/vue.min.js"></script>
+    <script src="__PUBLIC__/Index/js/vant.min.js"></script>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                clientW: document.documentElement.clientWidth,
+                clientH: document.documentElement.clientHeight,
+                // 追加参数
+                appStatus: false,
+                showHome: true,    //显示首页
+                showQy: false,
+                showXz: false,
+
+            },
+            created: function () {
+                this.getViewScale();
+            },
+            mounted: function () {
+                this.appStatus = true;
+            },
+            methods: {
+                getViewScale: function () {
+                    var _this = this;
+                    if (this.clientW >= 750) {
+                        this.clientW = 640;
+                        // this.clientH = this.clientH
+                    }
+                },
+
+                // 点击在线评议跳转单位选取页面
+                toQsdw: function (page) {
+                    location.href = "https://t.shundecity.com/jxpytest2021.php/home/index/selectUnit.html";
+                    localStorage.setItem("currentType",page);
+                },
+
+                // 跳转到单位选取页面
+                toSelectUnit: function (page) {
+                    // if (page == 3 || page == 4) {
+                    // if (page == 4) {
+                    //     vant.Toast("暂未开放，敬请期待~");
+                    // } else {
+                    //     location.href = "https://t.shundecity.com/jxpytest2021.php/home/index/selectUnit.html";
+                    //     localStorage.setItem("currentType",page);
+                    // }
+                    
+                    location.href = "https://t.shundecity.com/jxpytest2021.php/home/index/selectUnit.html";
+                    localStorage.setItem("currentType",page);
+                }
+            }
+
+        })
+    </script>
+
+    <script src="https://t.shundecity.com/mbmzsd2019/Home/View/js/jweixin-1.0.0.js"></script>
+    <script>
+        //微信配置信息，这个用来认证微信的时候用到的，这里是写的php的标签，实际获取过程可以通过ajax等方式
+        wx.config({
+            debug: true,
+            appId: '{$signPackage.appId}',
+            timestamp: '{$signPackage.timestamp}',
+            nonceStr: '{$signPackage.nonceStr}',
+            signature: '{$signPackage.signature}',
+            jsApiList: [
+                "onMenuShareTimeline",
+                "onMenuShareAppMessage",
+                "onMenuShareQQ",
+                "onMenuShareWeibo",
+                "onMenuShareQZone"
+            ]
+        });
+
+        wx.ready(function () {
+            // 在这里调用 API
+            //alert("weixsdk 加载好了");
+        });
+        /*签名错误监听*/
+        wx.error(function (res) {
+            console.log("微信js-SDK签名认证错误");
+        });
+
+        //获取分享的信息,这个方法return一个对象,这个对象就是分享的时候分享的信息
+        function getshareData() {
+            var imgurl = "https://t.shundecity.com/50kmtb/Home/View/img/300.jpg";
+            var link = "https://t.shundecity.com/jxpytest2021.php/home/index/index.html";
+            var title = "2021年顺德区政府绩效公众网络评议_顺德城市网";
+            var desc = "诚邀您对顺德政府各单位2021年的工作进行评议，评议时间截至2021年12月31日。";
+
+            //分享信息对象
+            var shareData = {
+                "img_url": imgurl,
+                "img_width": 800,
+                "img_height": 400,
+                "link": link,
+                "desc": desc,
+                "title": title,
+                //这个是分享出去的下面的logo,如果不写也可以，这里的appid是微信开放平台的appid
+                "appid": "wx9ac1106685213ee2"
+            };
+
+            return shareData;
+        }
+
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+            // 发送给好友
+            WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+                shareFriend();
+            });
+            // 分享到朋友圈
+            WeixinJSBridge.on('menu:share:timeline', function (argv) {
+                shareTimeline();
+                // alert("pyq");
+            });
+        }, false);
+
+
+        function shareTimeline() {
+            WeixinJSBridge.invoke('shareTimeline', getshareData(), function (res) {
+                validateShare(res);
+            });
+        }
+
+        function shareFriend() {
+            WeixinJSBridge.invoke('sendAppMessage', getshareData(), function (res) {
+                validateShare(res);
+            });
+        }
+
+        function validateShare(res) {
+            if (res.err_msg != 'send_app_msg:cancel' && res.err_msg != 'share_timeline:cancel') {
+                //分享完毕回调
+            }
+        }
+    </script>
+</body>
+
+</html>
