@@ -1,0 +1,877 @@
+@bs:46.875rem;
+
+.bg(@url){
+    background-image: url('../images/@{url}');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.fs(@size){
+    font-size: (@size/@bs);
+}
+
+.size(@w,@h){
+    width:(@w/@bs);
+    height:(@h/@bs);
+}
+
+.w(@w){
+    width:(@w/@bs);
+}
+
+.h(@h){
+    height:(@h/@bs);
+}
+
+#root{
+    position: relative;
+
+    .mask{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 99;
+
+        .tipsImg{
+            .size(254,135);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 999;
+        }
+
+        
+    }
+
+    .ribbon{
+        width: 100%;
+        height: 100%;
+        .bg("ribbon.gif");
+        z-index: 100;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+    }
+
+    .cheerFood{
+        // width: 100%;
+        // height: 100%;
+        .size(500,500);
+        z-index: 101;
+        position: relative;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        display: none;
+
+        & .cheer_item{
+            position: absolute;
+        }
+
+        .cheer_chicken{
+            left: 0%;
+            top: 50%;
+            margin-top: (-98 / @bs);
+            .size(145,196);
+            .bg("cheer_chicken.png");
+            animation:cheerFoodShow 0.3s linear 1,foodCheer 0.4s ease 0.3s infinite forwards,cheerFoodHide 0.3s linear 1.7s 1 forwards;
+        }
+        .cheer_fcyjj{
+            left: 30%;
+            top: 0%;
+            .size(145,213);
+            .bg("cheer_fcyjj.png");
+            animation:cheerFoodShow 0.3s linear 1,foodCheer 0.4s ease 0.4s infinite forwards,cheerFoodHide 0.3s linear 1.7s 1 forwards;
+        }
+        .cheer_pig{
+            right: 0%;
+            top: 20%;
+            .size(128,183);
+            .bg("cheer_pig.png");
+            animation:cheerFoodShow 0.3s linear 1,foodCheer 0.4s ease 0.5s infinite forwards,cheerFoodHide 0.3s linear 1.7s 1 forwards;
+        }
+        .cheer_fish{
+            right: 0;
+            bottom: 0;
+            .size(180,178);
+            .bg("cheer_fish.png");
+            animation:cheerFoodShow 0.3s linear 1,foodCheer 0.4s ease 0.6s infinite forwards,cheerFoodHide 0.3s linear 1.7s 1 forwards;
+        }
+        .cheer_spn{
+            left: 20%;
+            bottom: 0;
+            .size(180,124);
+            .bg("cheer_spn.png");
+            animation:cheerFoodShow 0.3s linear 1,foodCheer 0.4s ease 0.7s infinite forwards,cheerFoodHide 0.3s linear 1.7s 1 forwards;
+        }
+        .cheer_basketball{
+            left: 50%;
+            top: 60%;
+            margin-top: (-49 / @bs);
+            margin-left: (-49 / @bs);
+            .size(97,98);
+            .bg("basketball.png");
+            animation:cheerFoodShow 0.3s linear 1,cheerFoodHide 0.3s linear 1.7s 1 forwards;
+        }
+    }
+
+    .wrapper{
+        .bg("bgImg2.png");
+
+        .wrap{
+            width: 100%;
+            height: 100%;
+            .bg("bgImg1.png");
+            overflow: hidden;
+            position: relative;
+            overflow: hidden;
+
+            .mask_page{
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0);
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 99;
+                display: none;
+            }
+
+            .maskShow{
+                display: block;
+                background-color: rgba(0,0,0,.7);
+            }
+
+            .titleBox{
+                .size(1000,127);
+                // .bg("title.png");
+                margin:(60 / @bs) auto 0;
+                position: relative;
+
+                &>div{
+                    margin-right: 2px;
+                }
+
+                .xun{
+                    float: left;
+                    .size(100,76);
+                    .bg("title_xun.png");
+                    animation: fadeIn 1s 1s linear both, fontFloat 4.8s 4.2s linear infinite;
+                }
+                .wei{
+                    float: left;
+                    .size(111,76);
+                    .bg("title_wei.png");
+                    animation: fadeIn 1s 1.4s linear both, fontFloat 4.8s 4.6s linear infinite;
+                }
+                .shun{
+                    float: left;
+                    .size(113,75);
+                    .bg("title_shun.png");
+                    animation: fadeIn 1s 1.8s linear both, fontFloat 4.8s 5.0s linear infinite;
+                }
+                .de{
+                    float: left;
+                    .size(108,75);
+                    .bg("title_de.png");
+                    animation: fadeIn 1s 2.2s linear both, fontFloat 4.8s 5.4s linear infinite;
+                }
+                .tou{
+                    float: left;
+                    .size(111,75);
+                    .bg("title_tou.png");
+                    margin-top: (55 / @bs);
+                    animation: fadeIn 1s 2.6s linear both, fontFloat 4.8s 5.8s linear infinite;
+                }
+                .lan{
+                    float: left;
+                    .size(110,75);
+                    .bg("title_lan.png");
+                    margin-top: (55 / @bs);
+                    animation: fadeIn 1s 3.0s linear both, fontFloat 4.8s 6.2s linear infinite;
+                }
+                .yiBox{
+                    float: left;
+                    .size(101,75);
+                    margin-top: (55 / @bs);
+                    animation: fadeIn 1s 3.4s linear both, fontFloat 4.8s 6.6s linear infinite;
+                    
+                    .yi{
+                        .size(101,16);
+                        .bg("title_yi.png");
+                        margin-top: (29 / @bs);
+                    }
+                }
+                .ding{
+                    float: left;
+                    .size(106,75);
+                    .bg("title_ding.png");
+                    margin-top: (55 / @bs);
+                    animation: fadeIn 1s 3.8s linear both, fontFloat 4.8s 7.0s linear infinite;
+                }
+                .da{
+                    float: left;
+                    .size(99,75);
+                    .bg("title_da.png");
+                    margin-top: (55 / @bs);
+                    margin-right: 0;
+                    animation: fadeIn 1s 4.2s linear both, fontFloat 4.8s 7.4s linear infinite;
+                }
+            }
+
+            .flowerBox{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                .size(549,170);
+                .bg("flowers.png");
+                z-index: 12;
+            }
+
+            .shipBox{
+                position: absolute;
+                right: 32%;
+                bottom: -20%;
+                .size(95,181);
+                .bg("ship.png");
+                z-index: 10;
+                animation: shipMove 8s 0s linear infinite forwards;
+            }
+            .cloud{
+                position: absolute;
+                left: 36%;
+                bottom: 2%;
+                .size(227,77);
+                .bg("cloud.png");
+                animation: fadeIn 1s 1s linear both, cloudFloat 4s 1s linear infinite forwards;
+            }
+            .start{
+                position: absolute;
+                left: 12%;
+                bottom: 0%;
+                .size(435,144);
+                .bg("start.png");
+                animation: fadeIn 1s 1s linear both, startShow 3s 1s linear infinite forwards;
+            }
+
+            .basketball{
+                position: absolute;
+                left: 21.5%;
+                bottom: 18.5%;
+                .size(97,98);
+                .bg("basketball.png");
+                z-index: 12;
+            }
+            .passBall{
+                animation: passBall 0.5s linear 1 forwards;
+            }
+            .water1{
+                position: absolute;
+                left: 0%;
+                bottom: 0%;
+                width: 100%;
+                .h(357);
+                .bg("water1.png");
+                animation: water1Float 8s 0s linear infinite forwards;
+            }
+            .water2{
+                position: absolute;
+                left: 0%;
+                bottom: 0%;
+                width: 100%;
+                .h(357);
+                .bg("water2.png");
+                animation: water2Float 8s 0s linear infinite forwards;
+            }
+            .water3{
+                position: absolute;
+                left: 0%;
+                bottom: 0%;
+                width: 100%;
+                .h(357);
+                .bg("water3.png");
+                animation: water3Float 8s 0s linear infinite forwards;
+            }
+            .chicken_jump{
+                -webkit-animation-name: bounce;
+                animation-name: bounce;
+                -webkit-transform-origin: center bottom;
+                transform-origin: center bottom;
+                -webkit-animation-duration: 1s;
+                animation-duration: 1s;
+                -webkit-animation-timing-function: linear;
+                animation-timing-function: linear;
+                -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards;
+                -webkit-animation-iteration-count: 1;
+                animation-iteration-count: 1;
+            }
+            .chicken{
+                position: absolute;
+                left: 5%;
+                bottom: 20%;
+                .size(179,196);
+                .bg("chicken.png");
+                backface-visibility: visible;
+                z-index: 9;
+            }
+            .fcyjj{
+                position: absolute;
+                left: 14%;
+                bottom: 32%;
+                .size(153,213);
+                .bg("fcyjj.png");
+            }
+            .pig{
+                position: absolute;
+                left: 25%;
+                bottom: 32%;
+                .size(129,183);
+                .bg("pig.png");
+            }
+            .spn{
+                position: absolute;
+                left: 11%;
+                bottom: 4%;
+                .size(173,121);
+                .bg("spn.png");
+                z-index: 10;
+            }
+            .fish{
+                position: absolute;
+                left: 24%;
+                bottom: 5%;
+                .size(150,159);
+                .bg("fish.png");
+                z-index: 10;
+            }
+            .people{
+                display: none;
+                .size(300,210);
+                background-image: url(../images/1.png);
+                background-repeat: no-repeat;
+                background-size: 500% 100%;
+                position: absolute;
+                left: 32%;
+                top: 48%;
+                z-index: 2;
+            }
+            .dunk_pig{
+                display: block;
+                animation: dunk 0.8s steps(4) 0.7s 1 forwards;
+                // animation: dunk 0.8s steps(4) 0.5s infinite ;
+            }
+            
+            .hiddenBall{
+                .size(70,70);
+                .bg("hiddenBall2.png");
+                position: absolute;
+                left: 48%;
+                top: 39%;
+                z-index: 11;
+                transform: scale(0.5);
+                display: none;
+            }
+            .hideBallShow{
+                display: block;
+                animation: hideBallFall 2s 0s linear 1 forwards;
+            }
+            .chickenPlay{
+                animation: chickenPlay 0.3s 0s ease 1 forwards;
+
+            }
+            .fcyjjPlay{
+                animation: fcyjjPlay 0.3s 0s ease 1 forwards;
+                z-index: 21;
+            }
+            .pigPlay{
+                animation: pigPlay 0.3s 0s ease 1 forwards;
+                z-index: 21;
+            }
+            .fishPlay{
+                animation: fishPlay 0.3s 0s ease 1 forwards;
+                z-index: 21;
+            }
+            .spnPlay{
+                animation: spnPlay 0.3s 0s ease 1 forwards;
+                z-index: 21;
+            }
+            
+        }
+    }
+
+    .page_wrapper{
+        .size(1000,480);
+        z-index: 200;
+        position: absolute;
+        left: 50%;
+        top: 25%;
+        margin-left: (-500 / @bs);
+        padding: 6px;
+        border-radius: 10px;
+        background-color: #f8cf93;
+        display: none;
+
+        .page_wrap{
+            height: 100%;
+            border-radius: 10px;
+            border: 3px dashed #fff;
+            padding: 10px;
+            overflow: hidden;
+
+            .title{
+                margin-top: 25px;
+                text-align: center;
+                .h(34);
+                text-align: center;
+                margin: 0px auto 10px;
+
+                img{
+                    display: inline-block;
+                    max-width: 100%;
+                    width: auto;
+                    height: 100%;
+                }
+            }
+
+            .contentBox{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                height: 100%;
+                
+                .left_img{
+                    .w(320);
+                    position: relative;
+                    overflow: hidden;
+                    margin-right: (20/@bs);
+    
+                    .first_img{
+                        .size(243,162);
+                        position: absolute;
+                        left: 0;
+                        z-index: 1;
+                    }
+    
+                    .second_img{
+                        .size(272,182);
+                        margin-left: (44/@bs);
+                        margin-top: (142/@bs);
+                    }
+                }
+    
+                .right_text{
+                    flex: 1;
+                    overflow-y: auto;
+                    padding-bottom: 20px;
+
+                    .section{
+                        text-indent: 2em;
+                        line-height: 1.6;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .backBtn{
+            .size(84,86);
+            .bg("backBtn.png");
+            position: absolute;
+            right: (35/@bs);
+            bottom: 0;
+            transform: translateY(50%);
+            z-index: 203;
+        }
+        &.page_wrapper_show{
+            display: block;
+            animation:cheerFoodShow 0.3s linear 1;
+        }
+        &.page_wrapper_hide{
+            animation:cheerFoodHide 0.3s linear 1 forwards;
+        }
+    }
+}
+@keyframes cheerFoodHide {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0);
+    }
+}
+@keyframes cheerFoodShow {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes foodCheer {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+@keyframes spnPlay {
+    0%{
+        left: 11%;
+        bottom: 4%;
+    }
+    100%{
+        left: 14%;
+        bottom: 21%;
+    }
+}
+@keyframes fishPlay {
+    0%{
+        left: 24%;
+        bottom: 5%;
+    }
+    100%{
+        left: 15%;
+        bottom: 20%;
+    }
+}
+@keyframes pigPlay {
+    0%{
+        left: 25%;
+        bottom: 32%;
+    }
+    100%{
+        left: 15%;
+        bottom: 22%;
+    }
+}
+@keyframes fcyjjPlay {
+    0%{
+        left: 14%;
+        bottom: 32%;
+    }
+    100%{
+        left: 15%;
+        bottom: 22%;
+    }
+}
+@keyframes chickenPlay {
+    0%{
+        left: 5%;
+        bottom: 20%;
+    }
+    100%{
+        left: 12%;
+        bottom: 22%;
+    }
+}
+@keyframes hideBallFall {
+    0% {
+        transform: translate(0px,0px) rotateZ(0) scale(0.5);
+    }
+    33% {
+        transform: translate(0px,110px) rotateZ(0) scale(0.5);
+    }
+    100% {
+        transform: translate(-174px,110px) rotateZ(1800deg) scale(1);
+    }
+}
+@keyframes dunk {
+    0% {
+        background-position: 0% 0%;
+        // transform: translate(0px,0px);
+        left: 32%;
+        top: 48%;
+    }
+    100% {
+        background-position: 100% 0%;
+        // transform: translate(52px,-40px);
+        // transform: translate(32%,-36%);
+        left: 39%;
+        top: 38%;
+    }
+}
+@keyframes passBall{
+    0%{
+        // transform: translate(0,0) scale(1);
+        transform:scale(1);
+        left: 21.5%;
+        bottom: 18.5%;
+    }
+    100%{
+        // transform: translate(82px,-68px) scale(0.5);
+        // transform: translate(164%,-145%) scale(0.5);
+        transform:scale(0.5);
+        left: 33.5%;
+        bottom: 36.5%;
+    }
+}
+@keyframes chickenJump {
+    0%{
+        transform:translateY(0px);
+    }
+    25%{
+        transform:translateY(-20px);
+    }
+    50%{
+        transform:translateY(0px);
+    }
+    75%{
+        transform:translateY(-20px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+@keyframes foodRotate {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+        transform: translate(10%, 10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes startShow {
+    0%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fontFloat {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(0, -60%);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes cloudFloat {
+    0%{
+        transform: translateY(0%) scale(1);
+    }
+    50%{
+        transform: translateY(-20%) scale(1.2);
+    }
+    0%{
+        transform: translateY(0%) scale(1);
+    }
+}
+
+@keyframes shipMove{
+    0%{
+        opacity: 0.5;
+        transform: translate(0,0) rotateZ(0deg);
+    }
+    20%{
+        opacity: 1;
+        transform: translate(40px,40px) rotateZ(-10deg);
+    }
+    80%{
+        opacity: 1;
+        transform: translate(60px,-160px) rotateZ(-35deg);
+    }
+    100%{
+        opacity: 0.5;
+        transform: translate(60px,-230px) rotateZ(-35deg);
+    }
+}
+@keyframes water1Float{
+    0%{
+        opacity: 0;
+        transform: translateY(0);
+    }
+    5%{
+        opacity: 1;
+        transform: translateY(1%);
+
+    }
+    55%{
+        opacity: 1;
+        transform: translateY(9%);
+
+    }
+    62.5%{
+        opacity: 0;
+        transform: translateY(10%);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(10%);
+    }
+}
+@keyframes water2Float{
+    0%{
+        opacity: 0;
+        transform: translateY(0);
+    }
+    62.5%{
+        opacity: 0;
+        transform: translateY(0%);
+
+    }
+    65%{
+        opacity: 1;
+        transform: translateY(1%);
+
+    }
+    95%{
+        opacity: 1;
+        transform: translateY(9%);
+
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(10%);
+    }
+}
+@keyframes water3Float{
+    0%{
+        opacity: 0;
+        transform: translate(2px,-30px);
+    }
+    20%{
+        opacity: 1;
+        transform: translate(2px,-22px);
+    }
+    80%{
+        opacity: 1;
+        transform: translate(2px,2px);
+    }
+    100%{
+        opacity: 0;
+        transform: translate(2px,10px);
+    }
+}
+
+@keyframes basketballFloat {
+    from,
+    20%,
+    53%,
+    80%,
+    to {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    
+    40%,
+    43% {
+        -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        -webkit-transform: translate3d(0, -30px, 0);
+        transform: translate3d(0, -30px, 0);
+    }
+    
+    70% {
+        -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        -webkit-transform: translate3d(0, -15px, 0);
+        transform: translate3d(0, -15px, 0);
+    }
+    
+    90% {
+        -webkit-transform: translate3d(0, -4px, 0);
+        transform: translate3d(0, -4px, 0);
+    }
+}
+@keyframes bounce {
+    from,
+    20%,
+    53%,
+    80%,
+    to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+   
+    40%,
+    43% {
+      -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      -webkit-transform: translate3d(0, -30px, 0);
+      transform: translate3d(0, -30px, 0);
+    }
+   
+    70% {
+      -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      -webkit-transform: translate3d(0, -15px, 0);
+      transform: translate3d(0, -15px, 0);
+    }
+   
+    90% {
+      -webkit-transform: translate3d(0, -4px, 0);
+      transform: translate3d(0, -4px, 0);
+    }
+  }
+  @-webkit-keyframes bounce {
+    from,
+    20%,
+    53%,
+    80%,
+    to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+   
+    40%,
+    43% {
+      -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      -webkit-transform: translate3d(0, -30px, 0);
+      transform: translate3d(0, -30px, 0);
+    }
+   
+    70% {
+      -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      -webkit-transform: translate3d(0, -15px, 0);
+      transform: translate3d(0, -15px, 0);
+    }
+   
+    90% {
+      -webkit-transform: translate3d(0, -4px, 0);
+      transform: translate3d(0, -4px, 0);
+    }
+  }
