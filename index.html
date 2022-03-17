@@ -40,9 +40,7 @@
 </head>
 <body>
     <div id="app" v-show="appStatus" style="display: none;" v-cloak ref="view">
-        <!-- <div id="root" :style="{width:clientW + 'px',height:clientH + 'px'}"> -->
         <div id="root">
-            <!-- <div class="wrapper" :style="[wrapperStyle]"> -->
             <div class="wrapper">
                 <div class="mask" v-show="isMaskShow" @click="closeTips()">
                     <img class="tipsImg" src="./images/tip.png" alt="">
