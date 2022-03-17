@@ -33,17 +33,18 @@
         })(document, window);
     </script>
 
-    <link rel="stylesheet" href="./css/init.css">
-    <link rel="stylesheet" href="./css/vant.css">
-    <link rel="stylesheet" href="./css/animate.min.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="__PUBLIC__/Index/css/init.css">
+    <link rel="stylesheet" href="__PUBLIC__/Index/css/vant.css">
+    <link rel="stylesheet" href="__PUBLIC__/Index/css/animate.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/Index/css/index.css">
 </head>
 <body>
     <div id="app" v-show="appStatus" style="display: none;" v-cloak>
         <div id="root" :style="{width:clientW + 'px',height:clientH + 'px'}">
             <div class="mask" v-show="isMaskShow" @click="closeTips()">
-                <img class="tipsImg" src="./images/tip.png" alt="">
+                <img class="tipsImg" src="__PUBLIC__/Index/images/tip.png" alt="">
             </div>
+            <audio id="musicBox" ref="music" src="__PUBLIC__/Index/images/ribbon.mp3" preload="auto"></audio>
             <div class="wrapper" :style="[wrapperStyle]">
                 <div class="wrap">
                     <div class="mask_page"></div>
@@ -69,8 +70,8 @@
                         <div class="ding"></div>
                         <div class="da"></div>
                     </div>
-                    <div class="flowerBox"></div>
                     <div class="shipBox"></div>
+                    <div class="flowerBox"></div>
                     <div class="cloud"></div>
                     <div class="start"></div>
                     <div class="water1"></div>
@@ -108,13 +109,10 @@
     </div>
 </body>
 
-<script src="./js/jquery-3.1.1.min.js"></script>
-<script src="./js/vue.min.js"></script>
-<script src="./js/vant.min.js"></script>
-<script src="./js/vconsole.js"></script>
-<script>
-    var aa = new VConsole();
-</script>
+<script src="__PUBLIC__/Index/js/jquery-3.1.1.min.js"></script>
+<script src="__PUBLIC__/Index/js/vue.min.js"></script>
+<script src="__PUBLIC__/Index/js/vant.min.js"></script>
+
 
 <script>
     var app = new Vue({
@@ -139,8 +137,8 @@
             pageData:[
                 {
                     id:1,
-                    title:"./images/page_chicken_title.png",
-                    leftImg:["./images/page_chicken_1.png","./images/page_chicken_2.png"],
+                    title:"__PUBLIC__/Index/images/page_chicken_title.png",
+                    leftImg:["__PUBLIC__/Index/images/page_chicken_1.png","__PUBLIC__/Index/images/page_chicken_2.png"],
                     contentText:[
                         " “无鸡不成宴”，凤城四杯鸡是顺德传统名菜之一，每逢重大节日，少不了凤城四杯鸡的身影。",
                         "凤城四杯鸡是顺德传统名菜之一，因用四杯调料即一杯油（今用水）、一杯酒、一杯糖、一杯酱油调味而得名。这是顺德人传统吃鸡的煮法，四杯的份量是经过顺德厨师们摸索后，发现混合的味道刚刚好，煮出来的鸡颜色较深，味道浓郁，香气十足，四味调和！是一道地道的顺德家常菜。"
@@ -148,8 +146,8 @@
                 },
                 {
                     id:2,
-                    title:"./images/page_fcyjj_title.png",
-                    leftImg:["./images/page_fcyjj_1.png","./images/page_fcyjj_2.png"],
+                    title:"__PUBLIC__/Index/images/page_fcyjj_title.png",
+                    leftImg:["__PUBLIC__/Index/images/page_fcyjj_1.png","__PUBLIC__/Index/images/page_fcyjj_2.png"],
                     contentText:[
                         "凤城野鸡卷又称大良肉卷，是广东省传统的汉族名点，属于粤菜系。产于广东省佛山市顺德区大良，二十世纪二十年代大良宜春园酒家董程师傅创制。",
                         "名目与清代袁枚《随园食谱》所载的野鸡卷相同，而用料、制作相异。以肥肉片制成，特点是甘脆酥化，焦香味美，肥而不腻，宜酒宜茶。凤城野鸡卷色泽金黄，外酥里嫩，风味特别，流传市肆，遂为顺德名肴。"
@@ -157,8 +155,8 @@
                 },
                 {
                     id:3,
-                    title:"./images/page_pig_title.png",
-                    leftImg:["./images/page_pig_1.png","./images/page_pig_2.png"],
+                    title:"__PUBLIC__/Index/images/page_pig_title.png",
+                    leftImg:["__PUBLIC__/Index/images/page_pig_1.png","__PUBLIC__/Index/images/page_pig_2.png"],
                     contentText:[
                         "“均安蒸猪”被称为顺德几大名菜中的“贵族”。均安蒸猪最大的特色就是一次蒸整头猪，制作工艺讲究生猪的宰割的刀工，特殊工艺制法和蒸煮火候。",
                         "均安蒸猪，关键是要有一套大型的烹具，一个超大的农家土灶，一个特大口径的铁锅，还要有一个长方形的木盆。制作时先把宰好洗干净的全猪起骨，然后用精盐、白糖、黑胡椒粉、五香粉等佐料涂遍猪的内外，体外是不用加任何染色素的。涂抹过后腌大约两小时，然后用旺火隔水蒸它一小时，就可以食用了。全猪熟肉皮爽肉滑，肥而不腻。"
@@ -166,8 +164,8 @@
                 },
                 {
                     id:4,
-                    title:"./images/page_fish_title.png",
-                    leftImg:["./images/page_fish_1.png","./images/page_fish_2.png"],
+                    title:"__PUBLIC__/Index/images/page_fish_title.png",
+                    leftImg:["__PUBLIC__/Index/images/page_fish_1.png","__PUBLIC__/Index/images/page_fish_2.png"],
                     contentText:[
                         " 据传，均安有个叫万让的孝子，他的父亲非常喜欢吃鲮鱼，但是鲮鱼幼骨丝特别多，所以他为其父经常去骨。对此很是苦恼，终于有一天，他想到了酿鲮鱼的方法。",
                         "他先把鲮鱼的皮囊剥出来，起去其骨，把鲮鱼肉剁成肉茸，加上少许的生粉、精盐和炒香的花生、芝麻、葱花，把它们捞匀猜韧后再酿回皮囊中，使其还原成鲮鱼模样，然后用慢火把它煎熟。八宝酿鲮鱼，不仅纯鲮鱼肉味而满足了口感，而且无骨而免除了骨鲠的烦恼。",
@@ -176,8 +174,8 @@
                 },
                 {
                     id:5,
-                    title:"./images/page_spn_title.png",
-                    leftImg:["./images/page_spn_1.png","./images/page_spn_2.png"],
+                    title:"__PUBLIC__/Index/images/page_spn_title.png",
+                    leftImg:["__PUBLIC__/Index/images/page_spn_1.png","__PUBLIC__/Index/images/page_spn_2.png"],
                     contentText:[
                         " 当年顺德一位叫何十三的农家子弟，在清晨烹制早餐的时候，不小心在水牛奶里翻了个花样，不久有个识货的老朋友买去了配方，开了间食档，顺德双皮奶便吃成了传统，而双皮奶也便由清末流传至今。",
                         "双皮奶，上层奶皮甘香，下层奶皮香滑润口。吃起来，香气浓郁 ，入口嫩滑，让人唇齿留香。"
@@ -195,7 +193,7 @@
             this.jump();
             // this.clickFood();
             // setTimeout(() => {
-            //     $(".people").addClass("dunk_pig");
+            //     $(".people").addClass("._pig");
             // }, 2000);
         },
         computed:{
@@ -262,10 +260,12 @@
             // 点击食物触发
             clickFood:function (event){
                 // console.log(event.target.dataset.classname);
+                var _this = this;
                 var targetEle = event.target;
                 var targetClassName = targetEle.dataset.classname;
-                console.log(targetClassName);
                 this.playBall(event.target);
+                clearInterval(this.timer);
+                $(".food_item").removeClass("chicken_jump");
 
                 setTimeout(function (){
                     $(".basketball").addClass("passBall");
@@ -280,12 +280,21 @@
                                 $(".mask_page").addClass("maskShow");
                                 $(".ribbon").css("display","block");
                                 $(".cheerFood").css("display","block");
+                                _this.$refs.music.play();
+                                _this.$refs.music.volume = 0.6;
 
                                 setTimeout(function (){
+                                    // 喝彩过程结束
                                     $(".ribbon").css("display","none");
                                     $(".cheerFood").css("display","none");
                                     $(".page_wrapper").addClass("page_wrapper_show").css("display","block");
                                     $(".right_text").scrollTop(0);
+
+                                    // 声音延长两秒才结束
+                                    setTimeout(function (){
+                                        _this.$refs.music.pause();
+                                        _this.$refs.music.load();
+                                    },2000)
                                 },2000)
                             },600)
 
@@ -340,10 +349,12 @@
             
             // 点击返回按钮
             closePage:function (){
+                var _this = this;
                 $(".page_wrapper").css("display","block").removeClass("page_wrapper_show").addClass("page_wrapper_hide");
                 setTimeout(function (){
                     $(".mask_page").removeClass("maskShow");
                     $(".page_wrapper").css("display","none").removeClass("page_wrapper_hide");
+                    _this.jump();
                 },300)
             }
         },
