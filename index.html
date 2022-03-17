@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>寻味顺德，投篮一定得</title>
+
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    var clientHeight = docEl.clientHeight;
+
+                    if (!clientWidth) return;
+
+                    // 重点——>取屏幕短边作为clientW  
+                    if (clientWidth > clientHeight) {
+                        clientWidth = clientHeight;
+                    }
+
+                    if (clientWidth > 750) {
+                        docEl.style.fontSize = 35 + 'px';
+                    } else {
+                        docEl.style.fontSize = clientWidth / 16 + 'px';
+                    }
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+
+    <link rel="stylesheet" href="__PUBLIC__/Index/css/init.css">
+    <link rel="stylesheet" href="__PUBLIC__/Index/css/vant.css">
+    <link rel="stylesheet" href="__PUBLIC__/Index/css/animate.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/Index/css/index.css">
+</head>
+<body>
+    <div id="app" v-show="appStatus" style="display: none;" v-cloak>
+        <div id="root" :style="{width:clientW + 'px',height:clientH + 'px'}">
+            <div class="mask" v-show="isMaskShow" @click="closeTips()">
+                <img class="tipsImg" src="__PUBLIC__/Index/images/tip.png" alt="">
+            </div>
+            <div class="wrapper" :style="[wrapperStyle]">
+                <div class="wrap">
+                    <div class="mask_page"></div>
+                    <div class="ribbon"></div>
+                    <div class="cheerFood">
+                        <div class="cheer_chicken cheer_item cheerFoodShow"></div>
+                        <div class="cheer_fcyjj cheer_item"></div>
+                        <div class="cheer_pig cheer_item"></div>
+                        <div class="cheer_fish cheer_item"></div>
+                        <div class="cheer_spn cheer_item"></div>
+                        <div class="cheer_basketball cheer_item"></div>
+                    </div>
+                    <div class="titleBox">
+                        <div class="xun"></div>
+                        <div class="wei"></div>
+                        <div class="shun"></div>
+                        <div class="de"></div>
+                        <div class="tou"></div>
+                        <div class="lan"></div>
+                        <div class="yiBox">
+                            <div class="yi"></div>
+                        </div>
+                        <div class="ding"></div>
+                        <div class="da"></div>
+                    </div>
+                    <div class="flowerBox"></div>
+                    <div class="shipBox"></div>
+                    <div class="cloud"></div>
+                    <div class="start"></div>
+                    <div class="water1"></div>
+                    <div class="water2"></div>
+                    <div class="water3"></div>
+                    <div class="basketball"></div>
+                    <div class="chicken food_item" data-classname="chickenPlay" @click="clickFood($event)"></div>
+                    <div class="fcyjj food_item" data-classname="fcyjjPlay" @click="clickFood($event)"></div>
+                    <div class="pig food_item" data-classname="pigPlay" @click="clickFood($event)"></div>
+                    <div class="fish food_item" data-classname="fishPlay" @click="clickFood($event)"></div>
+                    <div class="spn food_item" data-classname="spnPlay" @click="clickFood($event)"></div>
+                    <div class="people"></div>
+                    <div class="hiddenBall"></div>
+                    <div class="page_wrapper">
+                        <div class="page_wrap">
+                            <div class="title"><img :src="curFoodData.title" alt=""></div>
+                            <div class="contentBox">
+                                <div class="left_img">
+                                    <img :src="curFoodData.leftImg[0]" alt="" class="first_img">
+                                    <img :src="curFoodData.leftImg[1]" alt="" class="second_img">
+                                </div>
+                                <div class="right_text">
+                                    <div class="section" v-for="(val,index) in curFoodData.contentText" :key="index">
+                                       {{val}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="backBtn" @click="closePage()"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="__PUBLIC__/Index/js/jquery-3.1.1.min.js"></script>
+<script src="__PUBLIC__/Index/js/vue.min.js"></script>
+<script src="__PUBLIC__/Index/js/vant.min.js"></script>
+<script src="__PUBLIC__/Index/js/vconsole.js"></script>
+<script>
+    var aa = new VConsole();
+</script>
+
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            winScreenW:window.screen.width,
+            winScreenH:window.screen.height,
+            clientW:document.documentElement.clientWidth,
+            clientH:document.documentElement.clientHeight,
+            appStatus:false,
+
+            //追加参数
+            isMaskShow:true,
+            timer:null,
+            curFoodIndex:-1,
+            curFoodData:{
+                id:1,
+                title:"",
+                leftImg:[],
+                contentText:[]
+            },
+            pageData:[
+                {
+                    id:1,
+                    title:"__PUBLIC__/Index/images/page_chicken_title.png",
+                    leftImg:["__PUBLIC__/Index/images/page_chicken_1.png","__PUBLIC__/Index/images/page_chicken_2.png"],
+                    contentText:[
+                        " “无鸡不成宴”，凤城四杯鸡是顺德传统名菜之一，每逢重大节日，少不了凤城四杯鸡的身影。",
+                        "凤城四杯鸡是顺德传统名菜之一，因用四杯调料即一杯油（今用水）、一杯酒、一杯糖、一杯酱油调味而得名。这是顺德人传统吃鸡的煮法，四杯的份量是经过顺德厨师们摸索后，发现混合的味道刚刚好，煮出来的鸡颜色较深，味道浓郁，香气十足，四味调和！是一道地道的顺德家常菜。"
+                    ]
+                },
+                {
+                    id:2,
+                    title:"__PUBLIC__/Index/images/page_fcyjj_title.png",
+                    leftImg:["__PUBLIC__/Index/images/page_fcyjj_1.png","__PUBLIC__/Index/images/page_fcyjj_2.png"],
+                    contentText:[
+                        "凤城野鸡卷又称大良肉卷，是广东省传统的汉族名点，属于粤菜系。产于广东省佛山市顺德区大良，二十世纪二十年代大良宜春园酒家董程师傅创制。",
+                        "名目与清代袁枚《随园食谱》所载的野鸡卷相同，而用料、制作相异。以肥肉片制成，特点是甘脆酥化，焦香味美，肥而不腻，宜酒宜茶。凤城野鸡卷色泽金黄，外酥里嫩，风味特别，流传市肆，遂为顺德名肴。"
+                    ]
+                },
+                {
+                    id:3,
+                    title:"__PUBLIC__/Index/images/page_pig_title.png",
+                    leftImg:["__PUBLIC__/Index/images/page_pig_1.png","__PUBLIC__/Index/images/page_pig_2.png"],
+                    contentText:[
+                        "“均安蒸猪”被称为顺德几大名菜中的“贵族”。均安蒸猪最大的特色就是一次蒸整头猪，制作工艺讲究生猪的宰割的刀工，特殊工艺制法和蒸煮火候。",
+                        "均安蒸猪，关键是要有一套大型的烹具，一个超大的农家土灶，一个特大口径的铁锅，还要有一个长方形的木盆。制作时先把宰好洗干净的全猪起骨，然后用精盐、白糖、黑胡椒粉、五香粉等佐料涂遍猪的内外，体外是不用加任何染色素的。涂抹过后腌大约两小时，然后用旺火隔水蒸它一小时，就可以食用了。全猪熟肉皮爽肉滑，肥而不腻。"
+                    ]
+                },
+                {
+                    id:4,
+                    title:"__PUBLIC__/Index/images/page_fish_title.png",
+                    leftImg:["__PUBLIC__/Index/images/page_fish_1.png","__PUBLIC__/Index/images/page_fish_2.png"],
+                    contentText:[
+                        " 据传，均安有个叫万让的孝子，他的父亲非常喜欢吃鲮鱼，但是鲮鱼幼骨丝特别多，所以他为其父经常去骨。对此很是苦恼，终于有一天，他想到了酿鲮鱼的方法。",
+                        "他先把鲮鱼的皮囊剥出来，起去其骨，把鲮鱼肉剁成肉茸，加上少许的生粉、精盐和炒香的花生、芝麻、葱花，把它们捞匀猜韧后再酿回皮囊中，使其还原成鲮鱼模样，然后用慢火把它煎熟。八宝酿鲮鱼，不仅纯鲮鱼肉味而满足了口感，而且无骨而免除了骨鲠的烦恼。",
+                        "不久，这道菜就在顺德当地流传并逐渐远播，人们还特意把这道菜取“让”字的谐音，把它叫作“酿鱼”。"
+                    ]
+                },
+                {
+                    id:5,
+                    title:"__PUBLIC__/Index/images/page_spn_title.png",
+                    leftImg:["__PUBLIC__/Index/images/page_spn_1.png","__PUBLIC__/Index/images/page_spn_2.png"],
+                    contentText:[
+                        " 当年顺德一位叫何十三的农家子弟，在清晨烹制早餐的时候，不小心在水牛奶里翻了个花样，不久有个识货的老朋友买去了配方，开了间食档，顺德双皮奶便吃成了传统，而双皮奶也便由清末流传至今。",
+                        "双皮奶，上层奶皮甘香，下层奶皮香滑润口。吃起来，香气浓郁 ，入口嫩滑，让人唇齿留香。"
+                    ]
+                }
+            ]
+        },
+        created:function (){
+            this.getScreenScale();
+        },
+        mounted:function (){
+            window.addEventListener("resize",this.reverseFun,false);
+            this.appStatus = true;
+
+            this.jump();
+            // this.clickFood();
+            // setTimeout(() => {
+            //     $(".people").addClass("dunk_pig");
+            // }, 2000);
+        },
+        computed:{
+            wrapperStyle:function (){
+                if(this.clientW < this.clientH){
+                    this.isMaskShow = true;
+                    return {
+                        width:this.clientH + "px",
+                        height:this.clientW + "px",
+                        transform:"rotate(90deg) translateZ(0)",
+                        transformOrigin:this.clientW / 2 + 'px ' + this.clientW / 2 + 'px'
+                    }
+                }else{
+                    this.isMaskShow = false;
+
+                    return {
+                        width:this.clientW + "px",
+                        height:this.clientH + "px"
+                    }
+                }
+            },
+            // curFoodData:function (){
+            //     console.log("this.curFoodIndex",this.curFoodIndex,this.pageData[this.curFoodIndex]);
+            //     return this.pageData[this.curFoodIndex];
+            // }
+        },
+        watch:{
+            curFoodIndex:function (newValue,oldvalue){
+                this.curFoodData = this.pageData[newValue];
+            }
+        },
+        methods:{
+            // 获取屏幕缩放信息
+            getScreenScale:function (){
+                if(this.clientW > 750){
+                    this.clientW = 640;
+                }
+            },
+
+            // 关闭横屏观看提示
+            closeTips:function (){
+                this.isMaskShow = false;
+            },
+
+            // 屏幕换向
+            reverseFun:function (){
+                this.clientW =  document.documentElement.clientWidth;               
+                this.clientH =  document.documentElement.clientHeight;
+                console.log("247clientW",this.clientW,"clientH",this.clientH);            
+            },
+
+            // 土鸡每隔两秒蹦一次
+            jump:function (){
+                var count = 0;
+                this.timer = setInterval(function (){
+                    if(count >= $(".food_item").length){
+                        count = 0;
+                    }
+                    $(".food_item").eq(count).addClass("chicken_jump").siblings().removeClass("chicken_jump");
+                    count++;
+                },2000)
+            },
+
+            // 点击食物触发
+            clickFood:function (event){
+                // console.log(event.target.dataset.classname);
+                var targetEle = event.target;
+                var targetClassName = targetEle.dataset.classname;
+                console.log(targetClassName);
+                this.playBall(event.target);
+
+                setTimeout(function (){
+                    $(".basketball").addClass("passBall");
+                    setTimeout(function (){
+                        $(".people").addClass("dunk_pig");
+
+                        setTimeout(function (){
+                            $(".hiddenBall").addClass("hideBallShow");
+
+                            // 球在下落的过程中弹出喝彩框
+                            setTimeout(function (){
+                                $(".mask_page").addClass("maskShow");
+                                $(".ribbon").css("display","block");
+                                $(".cheerFood").css("display","block");
+
+                                setTimeout(function (){
+                                    $(".ribbon").css("display","none");
+                                    $(".cheerFood").css("display","none");
+                                    $(".page_wrapper").addClass("page_wrapper_show").css("display","block");
+                                    $(".right_text").scrollTop(0);
+                                },2000)
+                            },600)
+
+                            setTimeout(function (){
+                                $(".hiddenBall").removeClass("hideBallShow");
+                                $(".basketball").css("display","block");
+                                $(".people").removeClass("dunk_pig");
+                                targetEle.classList.remove(targetClassName);
+                            },2000)
+                        },1500)
+                    },300)
+
+                    setTimeout(function (){
+                        $(".basketball").removeClass("passBall").css("display","none");
+                    },1200)
+                },500)
+                
+            },
+
+            // 食物触碰篮球
+            playBall:function (ele){
+                console.log("this",this);
+                var _this = this;
+                switch (ele.dataset.classname) {
+                    case "chickenPlay":
+                        ele.classList.add("chickenPlay");
+                        _this.curFoodIndex = 0;
+                        break;
+                    case "fcyjjPlay":
+                        ele.classList.add("fcyjjPlay");
+                        _this.curFoodIndex = 1;
+                        break;
+                    case "pigPlay":
+                        ele.classList.add("pigPlay");
+                        _this.curFoodIndex = 2;
+                        break;
+                    case "fishPlay":
+                        ele.classList.add("fishPlay");
+                        _this.curFoodIndex = 3;
+                        break;
+                    case "spnPlay":
+                        ele.classList.add("spnPlay");
+                        _this.curFoodIndex = 4;
+                        break;
+                    default:
+                        ele.classList.add("chickenPlay");
+                        _this.curFoodIndex = 0;
+                        break;
+                }
+                console.log("321this.curFoodIndex",this.curFoodIndex);
+            },
+            
+            // 点击返回按钮
+            closePage:function (){
+                $(".page_wrapper").css("display","block").removeClass("page_wrapper_show").addClass("page_wrapper_hide");
+                setTimeout(function (){
+                    $(".mask_page").removeClass("maskShow");
+                    $(".page_wrapper").css("display","none").removeClass("page_wrapper_hide");
+                },300)
+            }
+        },
+    })
+</script>
+</html>

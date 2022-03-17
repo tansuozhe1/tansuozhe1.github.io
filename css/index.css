@@ -1,0 +1,887 @@
+#root {
+  position: relative;
+}
+#root .mask {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99;
+}
+#root .mask .tipsImg {
+  width: 5.41866667rem;
+  height: 2.88rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+#root .ribbon {
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/ribbon.gif');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 100;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+#root .cheerFood {
+  width: 10.66666667rem;
+  height: 10.66666667rem;
+  z-index: 101;
+  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+#root .cheerFood .cheer_item {
+  position: absolute;
+}
+#root .cheerFood .cheer_chicken {
+  left: 0%;
+  top: 50%;
+  margin-top: -2.09066667rem;
+  width: 3.09333333rem;
+  height: 4.18133333rem;
+  background-image: url('../images/cheer_chicken.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: cheerFoodShow 0.3s linear 1, foodCheer 0.4s ease 0.3s infinite forwards, cheerFoodHide 0.3s linear 1.7s 1 forwards;
+}
+#root .cheerFood .cheer_fcyjj {
+  left: 30%;
+  top: 0%;
+  width: 3.09333333rem;
+  height: 4.544rem;
+  background-image: url('../images/cheer_fcyjj.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: cheerFoodShow 0.3s linear 1, foodCheer 0.4s ease 0.4s infinite forwards, cheerFoodHide 0.3s linear 1.7s 1 forwards;
+}
+#root .cheerFood .cheer_pig {
+  right: 0%;
+  top: 20%;
+  width: 2.73066667rem;
+  height: 3.904rem;
+  background-image: url('../images/cheer_pig.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: cheerFoodShow 0.3s linear 1, foodCheer 0.4s ease 0.5s infinite forwards, cheerFoodHide 0.3s linear 1.7s 1 forwards;
+}
+#root .cheerFood .cheer_fish {
+  right: 0;
+  bottom: 0;
+  width: 3.84rem;
+  height: 3.79733333rem;
+  background-image: url('../images/cheer_fish.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: cheerFoodShow 0.3s linear 1, foodCheer 0.4s ease 0.6s infinite forwards, cheerFoodHide 0.3s linear 1.7s 1 forwards;
+}
+#root .cheerFood .cheer_spn {
+  left: 20%;
+  bottom: 0;
+  width: 3.84rem;
+  height: 2.64533333rem;
+  background-image: url('../images/cheer_spn.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: cheerFoodShow 0.3s linear 1, foodCheer 0.4s ease 0.7s infinite forwards, cheerFoodHide 0.3s linear 1.7s 1 forwards;
+}
+#root .cheerFood .cheer_basketball {
+  left: 50%;
+  top: 60%;
+  margin-top: -1.04533333rem;
+  margin-left: -1.04533333rem;
+  width: 2.06933333rem;
+  height: 2.09066667rem;
+  background-image: url('../images/basketball.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: cheerFoodShow 0.3s linear 1, cheerFoodHide 0.3s linear 1.7s 1 forwards;
+}
+#root .wrapper {
+  background-image: url('../images/bgImg2.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+#root .wrapper .wrap {
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/bgImg1.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  overflow: hidden;
+}
+#root .wrapper .wrap .mask_page {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  display: none;
+}
+#root .wrapper .wrap .maskShow {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+#root .wrapper .wrap .titleBox {
+  width: 21.33333333rem;
+  height: 2.70933333rem;
+  margin: 1.28rem auto 0;
+  position: relative;
+}
+#root .wrapper .wrap .titleBox > div {
+  margin-right: 2px;
+}
+#root .wrapper .wrap .titleBox .xun {
+  float: left;
+  width: 2.13333333rem;
+  height: 1.62133333rem;
+  background-image: url('../images/title_xun.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: fadeIn 1s 1s linear both, fontFloat 4.8s 4.2s linear infinite;
+}
+#root .wrapper .wrap .titleBox .wei {
+  float: left;
+  width: 2.368rem;
+  height: 1.62133333rem;
+  background-image: url('../images/title_wei.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: fadeIn 1s 1.4s linear both, fontFloat 4.8s 4.6s linear infinite;
+}
+#root .wrapper .wrap .titleBox .shun {
+  float: left;
+  width: 2.41066667rem;
+  height: 1.6rem;
+  background-image: url('../images/title_shun.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: fadeIn 1s 1.8s linear both, fontFloat 4.8s 5s linear infinite;
+}
+#root .wrapper .wrap .titleBox .de {
+  float: left;
+  width: 2.304rem;
+  height: 1.6rem;
+  background-image: url('../images/title_de.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: fadeIn 1s 2.2s linear both, fontFloat 4.8s 5.4s linear infinite;
+}
+#root .wrapper .wrap .titleBox .tou {
+  float: left;
+  width: 2.368rem;
+  height: 1.6rem;
+  background-image: url('../images/title_tou.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-top: 1.17333333rem;
+  animation: fadeIn 1s 2.6s linear both, fontFloat 4.8s 5.8s linear infinite;
+}
+#root .wrapper .wrap .titleBox .lan {
+  float: left;
+  width: 2.34666667rem;
+  height: 1.6rem;
+  background-image: url('../images/title_lan.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-top: 1.17333333rem;
+  animation: fadeIn 1s 3s linear both, fontFloat 4.8s 6.2s linear infinite;
+}
+#root .wrapper .wrap .titleBox .yiBox {
+  float: left;
+  width: 2.15466667rem;
+  height: 1.6rem;
+  margin-top: 1.17333333rem;
+  animation: fadeIn 1s 3.4s linear both, fontFloat 4.8s 6.6s linear infinite;
+}
+#root .wrapper .wrap .titleBox .yiBox .yi {
+  width: 2.15466667rem;
+  height: 0.34133333rem;
+  background-image: url('../images/title_yi.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-top: 0.61866667rem;
+}
+#root .wrapper .wrap .titleBox .ding {
+  float: left;
+  width: 2.26133333rem;
+  height: 1.6rem;
+  background-image: url('../images/title_ding.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-top: 1.17333333rem;
+  animation: fadeIn 1s 3.8s linear both, fontFloat 4.8s 7s linear infinite;
+}
+#root .wrapper .wrap .titleBox .da {
+  float: left;
+  width: 2.112rem;
+  height: 1.6rem;
+  background-image: url('../images/title_da.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-top: 1.17333333rem;
+  margin-right: 0;
+  animation: fadeIn 1s 4.2s linear both, fontFloat 4.8s 7.4s linear infinite;
+}
+#root .wrapper .wrap .flowerBox {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 11.712rem;
+  height: 3.62666667rem;
+  background-image: url('../images/flowers.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 12;
+}
+#root .wrapper .wrap .shipBox {
+  position: absolute;
+  right: 32%;
+  bottom: -20%;
+  width: 2.02666667rem;
+  height: 3.86133333rem;
+  background-image: url('../images/ship.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 10;
+  animation: shipMove 8s 0s linear infinite forwards;
+}
+#root .wrapper .wrap .cloud {
+  position: absolute;
+  left: 36%;
+  bottom: 2%;
+  width: 4.84266667rem;
+  height: 1.64266667rem;
+  background-image: url('../images/cloud.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: fadeIn 1s 1s linear both, cloudFloat 4s 1s linear infinite forwards;
+}
+#root .wrapper .wrap .start {
+  position: absolute;
+  left: 12%;
+  bottom: 0%;
+  width: 9.28rem;
+  height: 3.072rem;
+  background-image: url('../images/start.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: fadeIn 1s 1s linear both, startShow 3s 1s linear infinite forwards;
+}
+#root .wrapper .wrap .basketball {
+  position: absolute;
+  left: 21.5%;
+  bottom: 18.5%;
+  width: 2.06933333rem;
+  height: 2.09066667rem;
+  background-image: url('../images/basketball.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 12;
+}
+#root .wrapper .wrap .passBall {
+  animation: passBall 0.5s linear 1 forwards;
+}
+#root .wrapper .wrap .water1 {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  width: 100%;
+  height: 7.616rem;
+  background-image: url('../images/water1.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: water1Float 8s 0s linear infinite forwards;
+}
+#root .wrapper .wrap .water2 {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  width: 100%;
+  height: 7.616rem;
+  background-image: url('../images/water2.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: water2Float 8s 0s linear infinite forwards;
+}
+#root .wrapper .wrap .water3 {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  width: 100%;
+  height: 7.616rem;
+  background-image: url('../images/water3.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: water3Float 8s 0s linear infinite forwards;
+}
+#root .wrapper .wrap .chicken_jump {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+#root .wrapper .wrap .chicken {
+  position: absolute;
+  left: 5%;
+  bottom: 20%;
+  width: 3.81866667rem;
+  height: 4.18133333rem;
+  background-image: url('../images/chicken.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  backface-visibility: visible;
+  z-index: 9;
+}
+#root .wrapper .wrap .fcyjj {
+  position: absolute;
+  left: 14%;
+  bottom: 32%;
+  width: 3.264rem;
+  height: 4.544rem;
+  background-image: url('../images/fcyjj.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+#root .wrapper .wrap .pig {
+  position: absolute;
+  left: 25%;
+  bottom: 32%;
+  width: 2.752rem;
+  height: 3.904rem;
+  background-image: url('../images/pig.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+#root .wrapper .wrap .spn {
+  position: absolute;
+  left: 11%;
+  bottom: 4%;
+  width: 3.69066667rem;
+  height: 2.58133333rem;
+  background-image: url('../images/spn.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 10;
+}
+#root .wrapper .wrap .fish {
+  position: absolute;
+  left: 24%;
+  bottom: 5%;
+  width: 3.2rem;
+  height: 3.392rem;
+  background-image: url('../images/fish.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 10;
+}
+#root .wrapper .wrap .people {
+  display: none;
+  width: 6.4rem;
+  height: 4.48rem;
+  background-image: url(../images/1.png);
+  background-repeat: no-repeat;
+  background-size: 500% 100%;
+  position: absolute;
+  left: 32%;
+  top: 48%;
+  z-index: 2;
+}
+#root .wrapper .wrap .dunk_pig {
+  display: block;
+  animation: dunk 0.8s steps(4) 0.7s 1 forwards;
+}
+#root .wrapper .wrap .hiddenBall {
+  width: 1.49333333rem;
+  height: 1.49333333rem;
+  background-image: url('../images/hiddenBall2.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 48%;
+  top: 39%;
+  z-index: 11;
+  transform: scale(0.5);
+  display: none;
+}
+#root .wrapper .wrap .hideBallShow {
+  display: block;
+  animation: hideBallFall 2s 0s linear 1 forwards;
+}
+#root .wrapper .wrap .chickenPlay {
+  animation: chickenPlay 0.3s 0s ease 1 forwards;
+}
+#root .wrapper .wrap .fcyjjPlay {
+  animation: fcyjjPlay 0.3s 0s ease 1 forwards;
+  z-index: 21;
+}
+#root .wrapper .wrap .pigPlay {
+  animation: pigPlay 0.3s 0s ease 1 forwards;
+  z-index: 21;
+}
+#root .wrapper .wrap .fishPlay {
+  animation: fishPlay 0.3s 0s ease 1 forwards;
+  z-index: 21;
+}
+#root .wrapper .wrap .spnPlay {
+  animation: spnPlay 0.3s 0s ease 1 forwards;
+  z-index: 21;
+}
+#root .page_wrapper {
+  width: 21.33333333rem;
+  height: 10.24rem;
+  z-index: 200;
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  margin-left: -10.66666667rem;
+  padding: 6px;
+  border-radius: 10px;
+  background-color: #f8cf93;
+  display: none;
+}
+#root .page_wrapper .page_wrap {
+  height: 100%;
+  border-radius: 10px;
+  border: 3px dashed #fff;
+  padding: 10px;
+  overflow: hidden;
+}
+#root .page_wrapper .page_wrap .title {
+  margin-top: 25px;
+  height: 0.72533333rem;
+  text-align: center;
+  margin: 0px auto 10px;
+}
+#root .page_wrapper .page_wrap .title img {
+  display: inline-block;
+  max-width: 100%;
+  width: auto;
+  height: 100%;
+}
+#root .page_wrapper .page_wrap .contentBox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+#root .page_wrapper .page_wrap .contentBox .left_img {
+  width: 6.82666667rem;
+  position: relative;
+  overflow: hidden;
+  margin-right: 0.42666667rem;
+}
+#root .page_wrapper .page_wrap .contentBox .left_img .first_img {
+  width: 5.184rem;
+  height: 3.456rem;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+#root .page_wrapper .page_wrap .contentBox .left_img .second_img {
+  width: 5.80266667rem;
+  height: 3.88266667rem;
+  margin-left: 0.93866667rem;
+  margin-top: 3.02933333rem;
+}
+#root .page_wrapper .page_wrap .contentBox .right_text {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+#root .page_wrapper .page_wrap .contentBox .right_text .section {
+  text-indent: 2em;
+  line-height: 1.6;
+  font-size: 16px;
+}
+#root .page_wrapper .backBtn {
+  width: 1.792rem;
+  height: 1.83466667rem;
+  background-image: url('../images/backBtn.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  right: 0.74666667rem;
+  bottom: 0;
+  transform: translateY(50%);
+  z-index: 203;
+}
+#root .page_wrapper.page_wrapper_show {
+  display: block;
+  animation: cheerFoodShow 0.3s linear 1;
+}
+#root .page_wrapper.page_wrapper_hide {
+  animation: cheerFoodHide 0.3s linear 1 forwards;
+}
+@keyframes cheerFoodHide {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes cheerFoodShow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes foodCheer {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes spnPlay {
+  0% {
+    left: 11%;
+    bottom: 4%;
+  }
+  100% {
+    left: 14%;
+    bottom: 21%;
+  }
+}
+@keyframes fishPlay {
+  0% {
+    left: 24%;
+    bottom: 5%;
+  }
+  100% {
+    left: 15%;
+    bottom: 20%;
+  }
+}
+@keyframes pigPlay {
+  0% {
+    left: 25%;
+    bottom: 32%;
+  }
+  100% {
+    left: 15%;
+    bottom: 22%;
+  }
+}
+@keyframes fcyjjPlay {
+  0% {
+    left: 14%;
+    bottom: 32%;
+  }
+  100% {
+    left: 15%;
+    bottom: 22%;
+  }
+}
+@keyframes chickenPlay {
+  0% {
+    left: 5%;
+    bottom: 20%;
+  }
+  100% {
+    left: 12%;
+    bottom: 22%;
+  }
+}
+@keyframes hideBallFall {
+  0% {
+    transform: translate(0px, 0px) rotateZ(0) scale(0.5);
+  }
+  33% {
+    transform: translate(0px, 110px) rotateZ(0) scale(0.5);
+  }
+  100% {
+    transform: translate(-174px, 110px) rotateZ(1800deg) scale(1);
+  }
+}
+@keyframes dunk {
+  0% {
+    background-position: 0% 0%;
+    left: 32%;
+    top: 48%;
+  }
+  100% {
+    background-position: 100% 0%;
+    left: 39%;
+    top: 38%;
+  }
+}
+@keyframes passBall {
+  0% {
+    transform: scale(1);
+    left: 21.5%;
+    bottom: 18.5%;
+  }
+  100% {
+    transform: scale(0.5);
+    left: 33.5%;
+    bottom: 36.5%;
+  }
+}
+@keyframes chickenJump {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes foodRotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(10%, 10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes startShow {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fontFloat {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -60%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes cloudFloat {
+  0% {
+    transform: translateY(0%) scale(1);
+  }
+  50% {
+    transform: translateY(-20%) scale(1.2);
+  }
+  0% {
+    transform: translateY(0%) scale(1);
+  }
+}
+@keyframes shipMove {
+  0% {
+    opacity: 0.5;
+    transform: translate(0, 0) rotateZ(0deg);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(40px, 40px) rotateZ(-10deg);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(60px, -160px) rotateZ(-35deg);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translate(60px, -230px) rotateZ(-35deg);
+  }
+}
+@keyframes water1Float {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  5% {
+    opacity: 1;
+    transform: translateY(1%);
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(9%);
+  }
+  62.5% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+}
+@keyframes water2Float {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  62.5% {
+    opacity: 0;
+    transform: translateY(0%);
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(1%);
+  }
+  95% {
+    opacity: 1;
+    transform: translateY(9%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+}
+@keyframes water3Float {
+  0% {
+    opacity: 0;
+    transform: translate(2px, -30px);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(2px, -22px);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(2px, 2px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(2px, 10px);
+  }
+}
+@keyframes basketballFloat {
+  from,
+  20%,
+  53%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  40%,
+  43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
+  }
+}
+@keyframes bounce {
+  from,
+  20%,
+  53%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  40%,
+  43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
+  }
+}
+@-webkit-keyframes bounce {
+  from,
+  20%,
+  53%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  40%,
+  43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
+  }
+}
