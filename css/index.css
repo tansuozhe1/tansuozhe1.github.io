@@ -451,17 +451,15 @@
   z-index: 21;
 }
 #root .wrapper .wrap .page_wrapper {
-  width: 21.33333333rem;
+  width: 70%;
   height: 10.24rem;
   z-index: 200;
-  position: absolute;
-  left: 50%;
-  top: 25%;
-  margin-left: -10.66666667rem;
+  margin: 0 auto;
   padding: 6px;
   border-radius: 10px;
   background-color: #f8cf93;
   display: none;
+  position: relative;
 }
 #root .wrapper .wrap .page_wrapper .page_wrap {
   height: 100%;
