@@ -1,5 +1,7 @@
 #root {
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 #root .mask {
   width: 100%;
@@ -109,6 +111,8 @@
   animation: cheerFoodShow 0.3s linear 1, cheerFoodHide 0.3s linear 1.7s 1 forwards;
 }
 #root .wrapper {
+  width: 100%;
+  height: 100%;
   background-image: url('../images/bgImg2.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -231,6 +235,42 @@
   margin-right: 0;
   animation: fadeIn 1s 4.2s linear both, fontFloat 4.8s 7.4s linear infinite;
 }
+#root .wrapper .wrap .water1 {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  width: 100%;
+  height: 7.616rem;
+  background-image: url('../images/water1.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: water1Float 8s 0s linear infinite forwards;
+  z-index: 0;
+}
+#root .wrapper .wrap .water2 {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  width: 100%;
+  height: 7.616rem;
+  background-image: url('../images/water2.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: water2Float 8s 0s linear infinite forwards;
+  z-index: 0;
+}
+#root .wrapper .wrap .water3 {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  width: 100%;
+  height: 7.616rem;
+  background-image: url('../images/water3.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: water3Float 8s 0s linear infinite forwards;
+  z-index: 0;
+}
 #root .wrapper .wrap .shipBox {
   position: absolute;
   right: 32%;
@@ -240,7 +280,7 @@
   background-image: url('../images/ship.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  z-index: -1;
+  z-index: 0;
   animation: shipMove 8s 0s linear infinite forwards;
 }
 #root .wrapper .wrap .flowerBox {
@@ -290,42 +330,6 @@
 }
 #root .wrapper .wrap .passBall {
   animation: passBall 0.5s linear 1 forwards;
-}
-#root .wrapper .wrap .water1 {
-  position: absolute;
-  left: 0%;
-  bottom: 0%;
-  width: 100%;
-  height: 7.616rem;
-  background-image: url('../images/water1.png');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  animation: water1Float 8s 0s linear infinite forwards;
-  z-index: -2;
-}
-#root .wrapper .wrap .water2 {
-  position: absolute;
-  left: 0%;
-  bottom: 0%;
-  width: 100%;
-  height: 7.616rem;
-  background-image: url('../images/water2.png');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  animation: water2Float 8s 0s linear infinite forwards;
-  z-index: -2;
-}
-#root .wrapper .wrap .water3 {
-  position: absolute;
-  left: 0%;
-  bottom: 0%;
-  width: 100%;
-  height: 7.616rem;
-  background-image: url('../images/water3.png');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  animation: water3Float 8s 0s linear infinite forwards;
-  z-index: -2;
 }
 #root .wrapper .wrap .chicken_jump {
   -webkit-animation-name: bounce;
@@ -465,7 +469,7 @@
   height: 100%;
   border-radius: 10px;
   border: 3px dashed #fff;
-  padding: 10px;
+  padding: 10px 0px 10px 10px;
   z-index: 200;
   overflow: hidden;
 }
@@ -511,11 +515,14 @@
   flex: 1;
   overflow-y: auto;
   padding-bottom: 20px;
+  padding-right: 10px;
 }
 #root .wrapper .wrap .page_wrapper .page_wrap .contentBox .right_text .section {
   text-indent: 2em;
   line-height: 1.6;
   font-size: 16px;
+  margin-bottom: 10px;
+  text-align: justify;
 }
 #root .wrapper .wrap .page_wrapper .backBtn {
   width: 1.792rem;
@@ -726,15 +733,15 @@
   }
   20% {
     opacity: 1;
-    transform: translate(40px, 40px) rotateZ(-10deg);
+    transform: translate(45px, 40px) rotateZ(-10deg);
   }
   80% {
     opacity: 1;
-    transform: translate(60px, -160px) rotateZ(-35deg);
+    transform: translate(65px, -160px) rotateZ(-35deg);
   }
   100% {
     opacity: 0.5;
-    transform: translate(60px, -230px) rotateZ(-35deg);
+    transform: translate(65px, -230px) rotateZ(-35deg);
   }
 }
 @keyframes water1Float {
