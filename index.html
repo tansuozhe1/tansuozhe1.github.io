@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="./css/init.css">
     <link rel="stylesheet" href="./css/vant.css">
     <link rel="stylesheet" href="./css/animate.min.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/index.css?v=1.0">
 
 </head>
 <body>
@@ -268,6 +268,7 @@
                 _this.isFlag = false;
                 var targetEle = event.target;
                 var targetClassName = targetEle.dataset.classname;
+                console.log("111",event.target);
                 this.playBall(event.target);
                 clearInterval(this.timer);
                 $(".food_item").removeClass("chicken_jump");
@@ -325,27 +326,33 @@
                 switch (ele.dataset.classname) {
                     case "chickenPlay":
                         ele.classList.add("chickenPlay");
+                        $(".people").css("background-image","url(../images/1.png)");
                         _this.curFoodIndex = 0;
                         break;
                     case "fcyjjPlay":
                         ele.classList.add("fcyjjPlay");
                         _this.curFoodIndex = 1;
+                        $(".people").css("background-image","url(../images/2.png)");
                         break;
                     case "pigPlay":
                         ele.classList.add("pigPlay");
                         _this.curFoodIndex = 2;
+                        $(".people").css("background-image","url(../images/3.png)");
                         break;
                     case "fishPlay":
                         ele.classList.add("fishPlay");
                         _this.curFoodIndex = 3;
+                        $(".people").css("background-image","url(../images/4.png)");
                         break;
                     case "spnPlay":
                         ele.classList.add("spnPlay");
                         _this.curFoodIndex = 4;
+                        $(".people").css("background-image","url(../images/5.png)");
                         break;
                     default:
                         ele.classList.add("chickenPlay");
                         _this.curFoodIndex = 0;
+                        $(".people").css("background-image","url(../images/1.png)");
                         break;
                 }
             },
@@ -411,7 +418,7 @@
 
                 var  newImg=document.createElement('img');
                 newImg.style="position: absolute;top:50%;left:50%;width:80%;height:80%;z-index:10000;transform:translate(-50%,-50%);object-fit: contain;";
-                newImg.src=e.target.src;
+                newImg.src=e.target.src.slice(0,-3) + "jpg";
                
                 newDiv.appendChild(newImg);
                 appBox.appendChild(newDiv);

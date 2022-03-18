@@ -158,7 +158,6 @@
   background-image: url('../images/title_xun.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  animation: fadeIn 1s 1s linear both, fontFloat 4.8s 4.2s linear infinite;
 }
 #root .wrapper .wrap .titleBox .wei {
   width: 2.368rem;
@@ -166,7 +165,6 @@
   background-image: url('../images/title_wei.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  animation: fadeIn 1s 1.4s linear both, fontFloat 4.8s 4.6s linear infinite;
 }
 #root .wrapper .wrap .titleBox .shun {
   width: 2.41066667rem;
@@ -174,7 +172,6 @@
   background-image: url('../images/title_shun.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  animation: fadeIn 1s 1.8s linear both, fontFloat 4.8s 5s linear infinite;
 }
 #root .wrapper .wrap .titleBox .de {
   width: 2.304rem;
@@ -182,7 +179,6 @@
   background-image: url('../images/title_de.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  animation: fadeIn 1s 2.2s linear both, fontFloat 4.8s 5.4s linear infinite;
 }
 #root .wrapper .wrap .titleBox .tou {
   width: 2.368rem;
@@ -191,7 +187,6 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin-top: 1.17333333rem;
-  animation: fadeIn 1s 2.6s linear both, fontFloat 4.8s 5.8s linear infinite;
 }
 #root .wrapper .wrap .titleBox .lan {
   width: 2.34666667rem;
@@ -200,13 +195,11 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin-top: 1.17333333rem;
-  animation: fadeIn 1s 3s linear both, fontFloat 4.8s 6.2s linear infinite;
 }
 #root .wrapper .wrap .titleBox .yiBox {
   width: 2.15466667rem;
   height: 1.6rem;
   margin-top: 1.17333333rem;
-  animation: fadeIn 1s 3.4s linear both, fontFloat 4.8s 6.6s linear infinite;
 }
 #root .wrapper .wrap .titleBox .yiBox .yi {
   width: 2.15466667rem;
@@ -223,7 +216,6 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin-top: 1.17333333rem;
-  animation: fadeIn 1s 3.8s linear both, fontFloat 4.8s 7s linear infinite;
 }
 #root .wrapper .wrap .titleBox .da {
   width: 2.112rem;
@@ -233,10 +225,9 @@
   background-size: 100% 100%;
   margin-top: 1.17333333rem;
   margin-right: 0;
-  animation: fadeIn 1s 4.2s linear both, fontFloat 4.8s 7.4s linear infinite;
 }
 #root .wrapper .wrap .water1 {
-  position: absolute;
+  position: fixed;
   left: 0%;
   bottom: 0%;
   width: 100%;
@@ -245,10 +236,9 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   animation: water1Float 8s 0s linear infinite forwards;
-  z-index: 0;
 }
 #root .wrapper .wrap .water2 {
-  position: absolute;
+  position: fixed;
   left: 0%;
   bottom: 0%;
   width: 100%;
@@ -257,10 +247,9 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   animation: water2Float 8s 0s linear infinite forwards;
-  z-index: 0;
 }
 #root .wrapper .wrap .water3 {
-  position: absolute;
+  position: fixed;
   left: 0%;
   bottom: 0%;
   width: 100%;
@@ -269,7 +258,6 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   animation: water3Float 8s 0s linear infinite forwards;
-  z-index: 0;
 }
 #root .wrapper .wrap .shipBox {
   position: absolute;
